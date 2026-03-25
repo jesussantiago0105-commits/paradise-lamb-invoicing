@@ -1,6 +1,8 @@
 import { NextResponse } from 'next/server'
 import prisma from '@/lib/prisma'
 
+export const dynamic = 'force-dynamic'
+
 async function getSettings() {
   let settings = await prisma.settings.findUnique({ where: { id: 'main' } })
   if (!settings) {
